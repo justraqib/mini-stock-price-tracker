@@ -1,4 +1,3 @@
-// src/components/PriceDisplay.js
 import React from 'react';
 
 const PriceDisplay = ({ price }) => {
