@@ -1,4 +1,3 @@
-// src/components/StockSelector.js
 import React from 'react';
 
 const StockSelector = ({ stocks, selectedStock, onSelect }) => {
