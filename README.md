@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Mini Stock Price Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple application that tracks stock prices. Users can select stocks from a predefined list, and the application fetches and displays the current price of the selected stock every minute.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `docker-compose up --build`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Builds and starts the Docker containers for the backend (Express) and MongoDB.\
+The application will be accessible at [http://localhost:3000](http://localhost:3000) for the frontend and [http://localhost:8080](http://localhost:8080) for the backend API.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `docker-compose down`
 
-### `npm test`
+Stops and removes the Docker containers. This command is useful when you need to stop the application.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
 
-### `npm run build`
+The project consists of two main parts:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Frontend**: A React application that allows users to select a stock and view its current price.
+2. **Backend**: An Express application that serves as a mock API to provide stock prices and interacts with a MongoDB database.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Frontend (React)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Stock Selector**: Dropdown menu for selecting a stock from a predefined list.
+- **Price Display**: Shows the current price of the selected stock, updated every minute.
 
-### `npm run eject`
+### Backend (Express)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Mock API Endpoint**: Provides random stock prices for the predefined stocks. The endpoint is available at `/stock-price/:symbol`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Database (MongoDB)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Stock Schema**: Stores a list of predefined stocks with their current prices.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Setup
 
-## Learn More
+### Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- [Docker](https://www.docker.com/) (for running MongoDB and the application)
+- [Docker Compose](https://docs.docker.com/compose/) (for managing multi-container Docker applications)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Build and Run the Application
 
-### Code Splitting
+1. **Clone the Repository**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```sh
+   git clone https://github.com/justraqib/mini-stock-price-tracker.git
+   cd mini-stock-price-tracker
